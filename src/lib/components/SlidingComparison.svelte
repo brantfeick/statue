@@ -26,15 +26,15 @@
     showHandlebar = true,
     autoplay = false,
     autoplayDuration = 5000,
-    height = '600px' // Default height
+    height = '600px'
   }: CompareProps = $props();
-  
-  let sliderXPercent = $state(50);
-  let isDragging = $state(false);
-  let containerRef: HTMLDivElement | null = $state(null);
-  let intervalRef: number | null = $state(null);
 
-  const isMouseEntered = $state({ value: false });
+  let sliderXPercent: number = $state(50);
+  let isDragging: boolean = false;
+  let containerRef: HTMLDivElement | null = null;
+  let intervalRef: number | null = null;
+
+  let isMouseEntered = { value: false };
 
   onMount(() => {
     sliderXPercent = initialSliderPercentage;

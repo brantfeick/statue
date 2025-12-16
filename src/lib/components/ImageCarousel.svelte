@@ -12,13 +12,10 @@
     height?: string;
   }
 
-  let {
-    slides = [],
-    height = '600px'
-  }: Props = $props();
+  let { slides = [], height = '600px' }: Props = $props();
 
-  let currentIndex = $state(0);
-  let isTransitioning = $state(false);
+  let currentIndex: number = $state(0);
+  let isTransitioning: boolean = $state(false);
   let carouselElement: HTMLDivElement;
   
   function goToSlide(index: number) {

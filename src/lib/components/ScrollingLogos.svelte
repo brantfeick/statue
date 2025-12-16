@@ -1,18 +1,16 @@
 <script lang="ts">
   interface Props {
-    class?: string;
+    className?: string;
     reverse?: boolean;
     pauseOnHover?: boolean;
-    children?: any;
     vertical?: boolean;
     repeat?: number;
   }
 
   let {
-    class: className = "",
+    className = "",
     reverse = false,
     pauseOnHover = false,
-    children,
     vertical = false,
     repeat = 4
   }: Props = $props();
@@ -56,7 +54,7 @@
       })}
       style="gap: var(--gap);"
     >
-      {@render children?.()}
+      <slot />
     </div>
   {/each}
 </div>

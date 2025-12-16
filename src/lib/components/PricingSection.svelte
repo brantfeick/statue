@@ -35,9 +35,9 @@
         saveVsMonthlyText?: string;
     }
 
-    let { 
-        plans, 
-        heading = '', 
+    let {
+        plans,
+        heading = '',
         description = '',
         monthlyLabel = 'Monthly',
         yearlyLabel = 'Yearly',
@@ -47,8 +47,8 @@
         saveVsMonthlyText = 'Save'
     }: Props = $props();
 
-    let isYearly = $state(false);
-    let openTooltip = $state<string | null>(null);
+    let isYearly: boolean = $state(false);
+    let openTooltip: string | null = $state(null);
 
     function formatPrice(price: number): string {
         return new Intl.NumberFormat('en-US', {

@@ -24,7 +24,7 @@
     class: className = ''
   }: Props = $props();
 
-  let openItems = $state(new Set<string>());
+  let openItems: Set<string> = $state(new Set<string>());
   
   function toggleItem(value: string) {
     if (type === 'single') {

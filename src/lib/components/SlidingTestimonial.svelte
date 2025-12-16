@@ -18,10 +18,10 @@
 
   let { reviews = [] }: Props = $props();
 
-  let currentIndex = $state(0);
+  let currentIndex: number = $state(0);
   let intervalId: number | null = null;
   let container: HTMLDivElement;
-  let isPaused = $state(false);
+  let isPaused: boolean = false;
 
   // Tweened animation with linear easing for smooth, constant-speed transitions
   const offset = tweened(0, {
